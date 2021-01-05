@@ -1,0 +1,52 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table, th, tr, td{
+  border: 1px solid black;
+}
+
+td {
+  color:red;
+  display:table-cell;
+
+}
+
+.btn-new {
+  color:white;
+  background-color: #824670;
+  padding: 0.5em 1em;
+  border-radius: 6px; }
+
+.btn-new:hover {
+  color: white;
+  background-color: rgba(130, 70, 112, 0.9); }
+
+.btn-change {
+  color:white;
+  background-color: #824670;
+  padding: 0.5em 1em;
+  margin-right: 5px;
+  border-radius: 6px; }
+
+.btn-change:hover {
+  color: white;
+  background-color: rgba(130, 70, 112, 0.9); }
+
+.show-input{
+  width: 500px;
+}
+.show-label{
+  display: block;
+  
+}
+
+.show{
+  margin-bottom: 10px;
+}
+  

@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  h2= `Edit ${book.title}`
+  
+  include errors
+  
+  form(action="/book/" + book.id + "/edit", method="post")
+    include form

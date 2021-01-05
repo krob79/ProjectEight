@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome! #{title}
+  p 
+   a(href="/book/new" class='btn-new') Create New Book
+  table
+    thead
+      tr
+        th Title
+        th Author
+        th Genre
+        th Year
+    tbody
+      each book in books
+        tr
+          td
+            a(href="/book/"+book.id) #{book.title}
+          td
+            p= book.author
+          td
+            p= book.genre
+          td
+            p= book.year
