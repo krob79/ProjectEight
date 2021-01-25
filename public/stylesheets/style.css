@@ -7,6 +7,12 @@ a {
   color: #00B7FF;
 }
 
+.input-field{
+  position:absolute; 
+  left:115px;
+  width: 300PX;
+}
+
 table, th, tr, td{
   border: 1px solid black;
 }
@@ -41,8 +47,18 @@ td {
   margin-left:20px;
 }
 
+#searchbar{
+  margin-right: 5px;
+}
+
 .search-form{
-  margin-top: 20px;
+  margin-top: -32px;
+  margin-left: 150px;
+}
+
+.clear-form{
+  margin-top: -32px;
+  margin-left: 388px;
 }
 
 

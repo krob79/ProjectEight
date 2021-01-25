@@ -3,12 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome! #{title}
-  a(href="/books/new" class='btn-style-main') Create New Book
-  div(class="create-search")
+  div(class="buttons-group")
+    form(action="/books/new", method="GET")
+      input(type="submit", class='btn-style-main', value="Create New Book")
     form(class="search-form" action="/books/?page=0", method="POST")
       input(type="text", id="searchbar" name="query" placeholder="Title, Author, Genre or Year")
       input(type="submit", class='btn-style-main', value="Search")
-    form(action="/books/?page=0", method="POST")
+    form(class="clear-form" action="/books/?page=0", method="POST")
       input.hidden(type="text" name="query")
       input(type="submit", class='btn-style-main', value="Clear")
   div(class="pageDisplay")
