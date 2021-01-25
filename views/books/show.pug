@@ -1,22 +1,18 @@
 extends ../layout
 
 block content
-    h2= book.title
+    h2= "BOOK DETAILS"
     div(class="show")
-        label(for="title") Title:
-        input(type="text", class="show-input" name="title" value=book.title)
+        label(for="title") Title: #{book.title}
     div(class="show")
-        label(for="author") Author:
-        input(type="text", class="show-input" name="author" value=book.author)
+        label(for="author") Author: #{book.author}
     div(class="show")
-        label(for="genre") Genre:
-        input(type="text", class="show-input" name="genre" value=book.genre)
+        label(for="genre") Genre: #{book.genre}
     div(class="show")
-        label(for="year") Year:
-        input(type="text", class="show-input" name="year" value=book.year)
- 
-    a(href="/book/" + book.id + "/edit" class='btn-change') Edit Book 
+        label(for="year") Year: #{book.year}
+    br
+    a(href="/books/" + book.id + "/edit" class='btn-style-main') Edit Book 
 
-    a(href="/book/" + book.id + "/delete" class='btn-change') Delete Book
+    a(href="/books/" + book.id + "/delete" class='btn-style-main') Delete Book
     p
      a(href="../") &larr; Back to All Books

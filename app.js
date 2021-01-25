@@ -37,14 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  const err = new Error();
-  err.status = 404;
-  err.message = "WE'VE GOT AN ERROR HERE!";
-  next(err);
-  //next(createError(404));
-});
+
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -57,6 +50,16 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  const err = new Error();
+  err.status = 404;
+  err.message = "WE'VE GOT AN ERROR HERE!";
+  res.render('page-not-found');
+  next(err);
+  //next(createError(404));
+});
+
 /* Global error handler */
 app.use((err, req, res, next) => {
 
@@ -64,7 +67,7 @@ app.use((err, req, res, next) => {
     console.log('Global error handler called', err);
   }
     if(err.status === 404){
-       res.status(404).render('error', {message: err.message});
+       res.status(404).render('error', {message: err.message || `This isn't right somehow.`});
     } else {
         err.message = err.message || `Oops! It looks like something went wrong on the server`;
         console.log(`ERROR: ${err.message}`);

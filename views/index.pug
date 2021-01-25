@@ -3,23 +3,41 @@ extends layout
 block content
   h1= title
   p Welcome! #{title}
-  p 
-   a(href="/book/new" class='btn-new') Create New Book
-  table
-    thead
-      tr
-        th Title
-        th Author
-        th Genre
-        th Year
-    tbody
-      each book in books
-        tr
-          td
-            a(href="/book/"+book.id) #{book.title}
-          td
-            p= book.author
-          td
-            p= book.genre
-          td
-            p= book.year
+  a(href="/books/new" class='btn-style-main') Create New Book
+  div(class="create-search")
+    form(class="search-form" action="/books/?page=0", method="POST")
+      input(type="text", id="searchbar" name="query" placeholder="Title, Author, Genre or Year")
+      input(type="submit", class='btn-style-main', value="Search")
+    form(action="/books/?page=0", method="POST")
+      input.hidden(type="text" name="query")
+      input(type="submit", class='btn-style-main', value="Clear")
+  div(class="pageDisplay")
+    if(books.length > 0)
+      table
+        thead
+          tr
+            th Title
+            th Author
+            th Genre
+            th Year
+        tbody
+          each book in books
+            tr
+              td(style="width:300px")
+                a(href="/books/"+book.id) #{book.title}
+              td(style="width:150px")
+                p= book.author
+              td(style="width:150px")
+                p= book.genre
+              td(style="width:150px")
+                p= book.year
+      - var i = 1;
+      ul.pagination
+        while i < pagesNeeded + 1
+          li
+            if(i == currentPage+1)
+              a.currentPage(href=`/books/?page=${i-1}`)=i++
+            else
+              a(href=`/books/?page=${i-1}`)=i++
+    else
+      include no-results

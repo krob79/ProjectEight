@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h2= `New Book`
+  
+  include errors
+  form(action="/books/new", method="post")
+    include form
+  p
+     a(href="../") &larr; Back to All Books

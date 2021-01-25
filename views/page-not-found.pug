@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= error.status
+  p="PAGE IS NOT FOUND"
+  h2= error.message
+  h2 #{error.stack}

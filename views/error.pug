@@ -3,4 +3,7 @@ extends layout
 block content
   h1= error.status
   h2= error.message
-  pre #{error.stack}
+  p
+     a(href="/") &larr; Back to All Books
+  img(src="/images/404.gif" width="250px")
+  
