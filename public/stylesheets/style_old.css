@@ -1,0 +1,109 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.input-field{
+  position:absolute; 
+  left:115px;
+  width: 300PX;
+}
+
+table, th, tr, td{
+  border: 1px solid black;
+}
+
+td {
+  color:red;
+  display:table-cell;
+
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-style-main {
+  text-decoration: none;
+  font: 400 13.3333px Arial;
+  color:white;
+  background-color: #824670;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133)); 
+}
+
+.btn-style-main:hover {
+  color: white;
+  background-color: rgba(130, 70, 112, 0.9); }
+
+.search{
+  margin-left:20px;
+}
+
+#searchbar{
+  margin-right: 5px;
+}
+
+.search-form{
+  margin-top: -32px;
+  margin-left: 150px;
+}
+
+.clear-form{
+  margin-top: -32px;
+  margin-left: 388px;
+}
+
+
+.show-input{
+  width: 500px;
+}
+.show-label{
+  display: block;
+  
+}
+
+.show{
+  margin-bottom: 10px;
+}
+
+.pagination{
+  margin: 13px 0 13px 0;
+  text-align: left;
+  padding-inline-start: 0px;
+}
+ 
+  .pagination li{
+    display: inline;
+  }
+
+    .pagination li a{
+      border: 1px solid #a8a2a2;
+      border-radius: 5px;
+      padding: 3px 8px;
+      text-decoration: none;
+      color: #000000;
+    }
+
+   .currentPage{
+      color: white;
+      background-color: #4ba6c3;
+    }
+
+
+    .pagination li a.active,
+    .pagination li a:hover{
+      background-color: #4ba6c3;
+      color: #fff;
+    }
+
+.pageDisplay{
+  margin-top: 20px;
+}

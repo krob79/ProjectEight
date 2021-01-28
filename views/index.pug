@@ -2,16 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome! #{title}
-  div(class="buttons-group")
-    form(action="/books/new", method="GET")
-      input(type="submit", class='btn-style-main', value="Create New Book")
-    form(class="search-form" action="/books/?page=0", method="POST")
-      input(type="text", id="searchbar" name="query" placeholder="Title, Author, Genre or Year")
-      input(type="submit", class='btn-style-main', value="Search")
-    form(class="clear-form" action="/books/?page=0", method="POST")
-      input.hidden(type="text" name="query")
-      input(type="submit", class='btn-style-main', value="Clear")
+  p #{title}
+  a(href=`/books/new` class="button")="Create New Book"
+  form(class="search-form" action="/books/?page=0", method="POST")
+    input(type="text", id="searchbar", class="search", name="query" placeholder="Title, Author, Genre or Year")
+    input(type="submit", class="search", value="Search")
+  form(class="clear-form" action="/books/?page=0", method="POST")
+    input.hidden(type="text" name="query")
+    input(type="submit", class="search", value="Clear")
   div(class="pageDisplay")
     if(books.length > 0)
       table

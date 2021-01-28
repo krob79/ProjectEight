@@ -6,9 +6,8 @@ block content
     | Are you sure you want to delete 
     em= book.title
     | ?
-  form(action="/books/", method="get")
-    | 
-    input(class='btn-style-main' type="submit", value = "No! Take me back!")
+  a(href="/books/?page=0" class="button")="No! Take me back!"
   form(class="search-form" action="/books/" + book.id + "/delete", method="post")
     | 
-    input(class='btn-style-main' type="submit", value = "Yes, I'm sure")
+    input(class="delete" type="submit", value = "Yes, I'm sure")
+  

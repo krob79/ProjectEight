@@ -53,7 +53,7 @@ app.use(function(err, req, res, next) {
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   const err = new Error();
-  err.status = 404;
+  err.status = "404";
   err.message = "WE'VE GOT AN ERROR HERE!";
   res.render('page-not-found');
   next(err);

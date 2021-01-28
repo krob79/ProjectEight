@@ -10,9 +10,9 @@ block content
         label(for="genre") Genre: #{book.genre}
     div(class="show")
         label(for="year") Year: #{book.year}
-    br
-    a(href="/books/" + book.id + "/edit" class='btn-style-main') Edit Book 
-
-    a(href="/books/" + book.id + "/delete" class='btn-style-main') Delete Book
     p
-     a(href="../") &larr; Back to All Books
+        a(href="/books/" + book.id + "/edit" class='button') Edit Book 
+    p
+        a(href="/books/" + book.id + "/delete" class='button') Delete Book
+    p
+     a(href="../" class="button") &larr; Back to All Books
