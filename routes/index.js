@@ -24,6 +24,13 @@ router.get('/', (req, res) => {
 
 /* GET home page. */
 router.get('/books', asyncHandler(async (req, res, next) => {
+  if(!Number.isInteger(parseInt(req.query.page))){
+    let error = new Error();
+    error.status = "404";
+    error.message = "That page doesn't exist";
+    console.log("----ERROR: " + error);
+    throw error;
+  }
   if(searchQuery === ''){
     const {count, rows} = await Book.findAndCountAll({
       offset: parseInt(req.query.page) * countPerPage,
@@ -177,5 +184,15 @@ router.post('/books/:id/delete', asyncHandler(async (req ,res) => {
     res.sendStatus(404);
   }
 }));
+
+router.get('/:page', function(req, res) {
+  const pageName = req.params.page;
+  const err = new Error();
+  err.status = "404";
+  err.message = `It looks like the page you typed in (${pageName}) doesn't exist.`;
+  console.log(err.message);
+  res.render('page-not-found', {error: err});
+  
+});
 
 module.exports = router;

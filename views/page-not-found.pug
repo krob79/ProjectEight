@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  h1= error.status
-  p="PAGE IS NOT FOUND"
-  h2= error.message
-  h2 #{error.stack}
+  h1=error.message
+  a(href="/") &larr; Back to All Books
+  p
+    img(src="/images/404.gif" width="450px")
+     

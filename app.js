@@ -34,8 +34,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.get('/favicon.ico', function(req, res) {
+  res.sendFile("/static/favicon.io");
+});
 
 
 
@@ -56,8 +61,8 @@ app.use(function(req, res, next) {
   err.status = "404";
   err.message = "WE'VE GOT AN ERROR HERE!";
   res.render('page-not-found');
-  next(err);
-  //next(createError(404));
+  //next(err);
+  next(createError(404));
 });
 
 /* Global error handler */
